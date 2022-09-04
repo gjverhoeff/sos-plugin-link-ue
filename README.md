@@ -1,4 +1,4 @@
-# sos-plugin-link-ue
+# SOS Plugin Link (Unreal Engine 5 Plugin)
 Plugin for Unreal Engine 5 to easily work with data received from the Rocket League SOS-Plugin to be used in Virtual Productions. 
 
 Simple Unreal Engine plugin to easily implement some of the data provided by the Rocket League BakkesMod SOS-Plugin. 
@@ -12,3 +12,8 @@ Make sure SOS-Plugin is running with BakkesMod. More information about SOS-Plugi
 
 ![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/09/SOSPluginBlueprint.jpg)
 
+
+
+
+
+WebSocket functionality inspired by the following repository: https://github.com/minimpoun/BlueprintWebsockets
