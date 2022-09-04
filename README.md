@@ -3,7 +3,7 @@ Plugin for Unreal Engine 5 to easily work with data received from the Rocket Lea
 
 Simple Unreal Engine plugin to easily implement some of the data provided by the Rocket League BakkesMod SOS-Plugin. 
 
-## Instalation
+## Installation
 Download the latest version from the releases page and make sure that that you put the plugin in the plugins folder of your Unreal Engine Project. 
 
 Make sure SOS-Plugin is running with BakkesMod. More information about SOS-Plugin can be found here: https://gitlab.com/bakkesplugins/sos/sos-plugin
