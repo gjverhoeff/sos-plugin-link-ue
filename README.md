@@ -17,3 +17,8 @@ Make sure SOS-Plugin is running with BakkesMod. More information about SOS-Plugi
 
 
 WebSocket functionality inspired by the following repository: https://github.com/minimpoun/BlueprintWebsockets
+
+
+
+
+[![](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=LT6BSRW7G8TFG)
