@@ -12,10 +12,7 @@ Make sure SOS-Plugin is running with BakkesMod. More information about SOS-Plugi
 
 ![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/09/SOSPluginWebsocket.jpg)
 
-
-
-
-
+Discord support: https://discord.com/invite/A86Hv9vDSq
 WebSocket functionality inspired by the following repository: https://github.com/minimpoun/BlueprintWebsockets
 
 
