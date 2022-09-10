@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 2,
+	"VersionName": "0.2",
+	"FriendlyName": "SOSPluginLink",
+	"Description": "A little plugin to subscribe to SOS-Plugin Websocket messages from Rocket League to use for live productions.",
+	"Category": "esports",
+	"CreatedBy": "Sumatras Studios",
+	"CreatedByURL": "https://www.geertverhoeff.com",
+	"DocsURL": "https://blog.geertverhoeff.com/sos-plugin-link-unreal-engine/",
+	"MarketplaceURL": "",
+	"SupportURL": "https://www.geertverhoeff.com/contact",
+	"CanContainContent": false,
+	"EngineVersion": "5.0",
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "SOSPluginLink",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	]
+}
