@@ -13,12 +13,16 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnWebSocketClosed, int32, Status
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnWebSocketMessageReceived, const FString&, Data);
 
 
+
+
 UCLASS(MinimalAPI, BlueprintType)
 class UWebSocket final : public UObject
 {
 	GENERATED_BODY()
 
 public:
+
+
 
 	UPROPERTY(BlueprintAssignable)
 		FOnWebSocketConnected OnWebSocketConnected;
@@ -44,11 +48,6 @@ public:
 		bool IsConnected() const;
 
 
-	UFUNCTION(BlueprintCallable, Category = "SOS Plugin")
-		static void SOSPluginGameDataConverter(const FString data, FString& arena, int& gametime, bool& isReplay, bool& overtime, bool& hasWinner, FVector& ballLocation, int& ballSpeed, FString& blueTeamName, FString& orangeTeamName, int& goalsBlue, int& goalsOrange);
-
-	UFUNCTION(BlueprintCallable, Category = "SOS Plugin")
-		static void SOSPluginPlayerDataConverter(const FString data, const int player, FString& playerName, int& goals, int& assist, int& demos, int& saves, int& score, int& shots, int& speed, int& touches, int& boost, int& team, FVector& playerLocation, FRotator& playerRotation);
 
 
 private:

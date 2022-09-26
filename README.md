@@ -10,7 +10,7 @@ Make sure SOS-Plugin is running with BakkesMod. More information about SOS-Plugi
 
 ## Usage
 
-![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/09/SOSPluginWebsocket.jpg)
+![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/09/sospluginlink03.jpg)
 
 Discord support: https://discord.com/invite/A86Hv9vDSq
 
