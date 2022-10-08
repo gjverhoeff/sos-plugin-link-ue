@@ -9,8 +9,12 @@ Download the latest version from the releases page and make sure that that you p
 Make sure SOS-Plugin is running with BakkesMod. More information about SOS-Plugin can be found here: https://gitlab.com/bakkesplugins/sos/sos-plugin
 
 ## Usage
+Setup you blueprint as the following screenshot to get the data from the SOS-Plugin. The resulting data can be used in all the other nodes (2nd screenshot).
 
-![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/09/SOSPluginWebsocket.jpg)
+![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/10/Screenshot-how-to-connect.jpg)
+
+![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/10/Screenshots-of-Nodes.jpg)
+
 
 Discord support: https://discord.com/invite/A86Hv9vDSq
 
