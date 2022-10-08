@@ -130,7 +130,8 @@ void USOSPluginFunctionLibrary::SOSPluginPlayerDataConverter(const FString data,
 
 };
 
-void USOSPluginFunctionLibrary::SOSPluginGoalScored(const FString data, TEnumAsByte<EScored>& Scored, FString& scorer, int& teamNumber, FString& assister, float& goalSpeed, float& goalTime)
+
+void USOSPluginFunctionLibrary::SOSPluginGoalScored(const FString data, TEnumAsByte<EScored>& Scored, FString& scorer, int& teamNumber, FString& assister, float& goalSpeed, float& goalTime, FString& PlayerLastTouched, float& SpeedLastTouched)
 {
 	bool dataEmpty = data.IsEmpty();
 	bool dataNotVersionMessage = data.Contains("sos:version");
@@ -153,6 +154,11 @@ void USOSPluginFunctionLibrary::SOSPluginGoalScored(const FString data, TEnumAsB
 					if (eventString == "game:goal_scored") {
 						auto objScorer = objData->GetObjectField("scorer");
 						auto objAssist = objData->GetObjectField("assister");
+						auto objLastTouched = objData->GetObjectField("ball_last_touched");
+
+						PlayerLastTouched = objLastTouched->GetStringField("player");
+						SpeedLastTouched = objLastTouched->GetNumberField("speed");
+
 
 						scorer = objScorer->GetStringField("name");
 						teamNumber = objScorer->GetNumberField("teamnum");
@@ -173,8 +179,101 @@ void USOSPluginFunctionLibrary::SOSPluginGoalScored(const FString data, TEnumAsB
 
 };
 
+void USOSPluginFunctionLibrary::SOSPluginStatFeedEvent(const FString data, TEnumAsByte<EStatFeed>& StatFeed, FString& Event, FString& Type, FString& MainTargetName, int& MainTargetTeamNumber, FString& SecondaryTargetName, int& SecondaryTargetTeamNumber)
+{
+	bool dataEmpty = data.IsEmpty();
+	bool dataNotVersionMessage = data.Contains("sos:version");
+
+	if (dataEmpty == false && dataNotVersionMessage == false) {
+
+		TSharedRef<TJsonReader<TCHAR>> JsonReader = TJsonReaderFactory<TCHAR>::Create(data);
+		TSharedPtr<FJsonObject> JsonObject = MakeShareable(new FJsonObject);
+		if (FJsonSerializer::Deserialize(JsonReader, JsonObject) && JsonObject.IsValid())
+		{
+			const TSharedPtr<FJsonObject>* DataJsonObject;
+
+			if (JsonObject->TryGetObjectField("data", DataJsonObject)) {
+
+				TSharedPtr<FJsonObject> objData = JsonObject->GetObjectField("data");
+
+				if (JsonObject->TryGetField("event")) {
+					auto eventString = JsonObject->GetStringField("event");
+
+					if (eventString == "game:statfeed_event") {
+						auto objMainTarget = objData->GetObjectField("main_target");
+						auto objSecondaryTarget = objData->GetObjectField("secondary_target");
+
+						Event = objData->GetStringField("event_name");
+						Type = objData->GetStringField("type");
+
+						MainTargetName = objMainTarget->GetStringField("name");
+						MainTargetTeamNumber = objMainTarget->GetNumberField("team_num");
+						SecondaryTargetName = objSecondaryTarget->GetStringField("name");
+						SecondaryTargetTeamNumber = objSecondaryTarget -> GetNumberField("team_num");
+
+						
 
 
+						StatFeed = EStatFeed::StatEventFire;
+					}
+					else { StatFeed = EStatFeed::NoStatEventFire; }
+				}
+
+			}
+		}
+	}
+	else { StatFeed = EStatFeed::NoStatEventFire; }
+
+};
+
+void USOSPluginFunctionLibrary::SOSPluginBallHit(const FString data, TEnumAsByte<EBallHit>& BallHit, FVector& ballHitLocation, FString& player)
+{
+	bool dataEmpty = data.IsEmpty();
+	bool dataNotVersionMessage = data.Contains("sos:version");
+
+	if (dataEmpty == false && dataNotVersionMessage == false) {
+
+		TSharedRef<TJsonReader<TCHAR>> JsonReader = TJsonReaderFactory<TCHAR>::Create(data);
+		TSharedPtr<FJsonObject> JsonObject = MakeShareable(new FJsonObject);
+		if (FJsonSerializer::Deserialize(JsonReader, JsonObject) && JsonObject.IsValid())
+		{
+			const TSharedPtr<FJsonObject>* DataJsonObject;
+
+			if (JsonObject->TryGetObjectField("data", DataJsonObject)) {
+
+				TSharedPtr<FJsonObject> objData = JsonObject->GetObjectField("data");
+
+				if (JsonObject->TryGetField("event")) {
+					auto eventString = JsonObject->GetStringField("event");
+
+					if (eventString == "game:ball_hit") {
+						auto objBall = objData->GetObjectField("ball");
+						auto objBallLocation = objBall->GetObjectField("location");
+						auto objPlayer = objData->GetObjectField("player");
+
+						ballHitLocation = FVector(objBallLocation->GetNumberField("X"), objBallLocation->GetNumberField("Y"), objBallLocation->GetNumberField("Z"));
+
+						
+						
+						player = objPlayer->GetStringField("name");
+						
+
+						
+
+
+
+
+						BallHit = EBallHit::BallHit;
+					}
+					else { BallHit = EBallHit::BallNotHit; }
+				}
+
+			}
+		}
+	}
+	else { BallHit = EBallHit::BallNotHit; }
+
+};
 
 
 
