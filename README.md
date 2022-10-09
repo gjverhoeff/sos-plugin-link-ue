@@ -13,7 +13,7 @@ Setup you blueprint as the following screenshot to get the data from the SOS-Plu
 
 ![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/10/Screenshot-how-to-connect.jpg)
 
-![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/10/Screenshots-of-Nodes.jpg)
+![alt text](https://blog.geertverhoeff.com/wp-content/uploads/2022/10/Screenshots-of-Nodes-1.jpg)
 
 To have the plugin work in a packaged project make sure to add the following to your DefaultEngine.ini (normally found Project/Config/DefaultEngine.ini )
 
