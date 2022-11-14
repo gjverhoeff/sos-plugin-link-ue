@@ -22,7 +22,7 @@ UWebSocket* USOSPluginFunctionLibrary::SOSPluginWebsocketURL(FString ServerUrl)
 }
 
 
-void USOSPluginFunctionLibrary::SOSPluginGameDataConverter(const FString data, FString& arena, int& gametime, bool& isReplay, bool& overtime, bool& hasWinner, FVector& ballLocation, int& ballSpeed, FString& blueTeamName, FString& orangeTeamName, int& goalsBlue, int& goalsOrange)
+void USOSPluginFunctionLibrary::SOSPluginGameDataConverter(const FString data, FString& arena, int& gametime, bool& isReplay, bool& overtime, bool& hasWinner, FVector& ballLocation, int& ballSpeed, FString& blueTeamName, FString& orangeTeamName, int& goalsBlue, int& goalsOrange, bool& hasTarget, FString& targetID)
 {
 	TSharedRef<TJsonReader<TCHAR>> JsonReader = TJsonReaderFactory<TCHAR>::Create(data);
 	TSharedPtr<FJsonObject> JsonObject = MakeShareable(new FJsonObject);
@@ -45,6 +45,8 @@ void USOSPluginFunctionLibrary::SOSPluginGameDataConverter(const FString data, F
 					overtime = objGame->GetBoolField("isOT");
 					gametime = objGame->GetNumberField("time_seconds");
 					hasWinner = objGame->GetBoolField("hasWinner");
+					hasTarget = objGame->GetBoolField("hasTarget");
+					targetID = objGame->GetStringField("target");
 
 
 					//Teams Info

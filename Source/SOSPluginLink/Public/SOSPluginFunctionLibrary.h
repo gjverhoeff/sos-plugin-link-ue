@@ -42,7 +42,7 @@ public:
 	static UWebSocket* SOSPluginWebsocketURL(FString ServerUrl);
 
 	UFUNCTION(BlueprintCallable, Category = "SOS Plugin", Meta = (ToolTip = "Gives data of the game from the SOS-Plugin"))
-		static void SOSPluginGameDataConverter(const FString data, FString& arena, int& gametime, bool& isReplay, bool& overtime, bool& hasWinner, FVector& ballLocation, int& ballSpeed, FString& blueTeamName, FString& orangeTeamName, int& goalsBlue, int& goalsOrange);
+		static void SOSPluginGameDataConverter(const FString data, FString& arena, int& gametime, bool& isReplay, bool& overtime, bool& hasWinner, FVector& ballLocation, int& ballSpeed, FString& blueTeamName, FString& orangeTeamName, int& goalsBlue, int& goalsOrange, bool& hasTarget, FString& targetID);
 
 	UFUNCTION(BlueprintCallable, Category = "SOS Plugin", Meta =( ToolTip = "Gives data of a player from the SOS-Plugin array that starts at 0 until the amount of players in the game"))
 		static void SOSPluginPlayerDataConverter(const FString data, const int player, FString& playerName, int& goals, int& assist, int& demos, int& saves, int& score, int& shots, int& speed, int& touches, int& boost, int& team, FVector& playerLocation, FRotator& playerRotation);
