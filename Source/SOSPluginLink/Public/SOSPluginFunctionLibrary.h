@@ -45,7 +45,7 @@ public:
 		static void SOSPluginGameDataConverter(const FString data, FString& arena, int& gametime, bool& isReplay, bool& overtime, bool& hasWinner, FVector& ballLocation, int& ballSpeed, FString& blueTeamName, FString& orangeTeamName, int& goalsBlue, int& goalsOrange, bool& hasTarget, FString& targetID);
 
 	UFUNCTION(BlueprintCallable, Category = "SOS Plugin", Meta =( ToolTip = "Gives data of a player from the SOS-Plugin array that starts at 0 until the amount of players in the game"))
-		static void SOSPluginPlayerDataConverter(const FString data, const int player, FString& playerName, int& goals, int& assist, int& demos, int& saves, int& score, int& shots, int& speed, int& touches, int& boost, int& team, FVector& playerLocation, FRotator& playerRotation);
+		static void SOSPluginPlayerDataConverter(const FString data, const int player, FString& playerName, int& goals, int& assist, int& demos, int& saves, int& score, int& shots, int& speed, int& touches, int& boost, int& team, FVector& playerLocation, FRotator& playerRotation, FString& playerID);
 
 	UFUNCTION(BlueprintCallable, Category = "SOS Plugin", Meta = (ExpandEnumAsExecs = "Scored", ToolTip = "Gives the data when it detetcs game:goal_scored from SOS-Plugin data and fires the Goal Scored exec"))
 		static void SOSPluginGoalScored(const FString data, TEnumAsByte<EScored>& Scored, FString& scorer, int& teamNumber, FString& assister, float& goalSpeed, float& goalTime, FString& PlayerLastTouched, float& SpeedLastTouched);

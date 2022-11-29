@@ -72,7 +72,7 @@ void USOSPluginFunctionLibrary::SOSPluginGameDataConverter(const FString data, F
 	}
 };
 
-void USOSPluginFunctionLibrary::SOSPluginPlayerDataConverter(const FString data, const int player, FString& playerName, int& goals, int& assist, int& demos, int& saves, int& score, int& shots, int& speed, int& touches, int& boost, int& team, FVector& playerLocation, FRotator& playerRotation)
+void USOSPluginFunctionLibrary::SOSPluginPlayerDataConverter(const FString data, const int player, FString& playerName, int& goals, int& assist, int& demos, int& saves, int& score, int& shots, int& speed, int& touches, int& boost, int& team, FVector& playerLocation, FRotator& playerRotation, FString& playerID)
 {
 	TSharedRef<TJsonReader<TCHAR>> JsonReader = TJsonReaderFactory<TCHAR>::Create(data);
 	TSharedPtr<FJsonObject> JsonObject = MakeShareable(new FJsonObject);
@@ -99,6 +99,7 @@ void USOSPluginFunctionLibrary::SOSPluginPlayerDataConverter(const FString data,
 						//Player Info
 						auto playerObjectInternal = objPlayers->GetObjectField(Result[player]);
 						playerName = playerObjectInternal->GetStringField("name");
+						playerID = playerObjectInternal->GetStringField("id");
 						goals = playerObjectInternal->GetNumberField("goals");
 						assist = playerObjectInternal->GetNumberField("assists");
 						demos = playerObjectInternal->GetNumberField("demos");
