@@ -30,5 +30,9 @@ WebSocket functionality inspired by the following repository: https://github.com
 
 
 
+Example of using the plugin is RL Buddy. An Android App for LAN esports events to show the stats during the game. You can download it for free here: https://play.google.com/store/apps/details?id=com.sumatrasstudios.RocketLeagueBuddy
+
+
+
 
 [![](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=LT6BSRW7G8TFG)
