@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 7,
-	"VersionName": "0.7",
+	"VersionName": "0.7.1",
 	"FriendlyName": "SOSPluginLink",
 	"Description": "A little plugin to subscribe to SOS-Plugin Websocket messages from Rocket League to use for live productions.",
 	"Category": "esports",
@@ -21,7 +21,9 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"PlatformAllowList": [
-				"Win64"
+				"Win64",
+				"Mac",
+				"Linux"
 			]
 		}
 	]

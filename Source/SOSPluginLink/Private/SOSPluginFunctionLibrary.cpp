@@ -112,7 +112,10 @@ void USOSPluginFunctionLibrary::SOSPluginPlayerDataConverter(const FString data,
 						boost = playerObjectInternal->GetNumberField("boost");
 						TSharedPtr<FJsonObject> playerLocationRotation = playerObjectInternal->GetObjectField("location");
 						playerLocation = FVector(playerLocationRotation->GetNumberField("X"), playerLocationRotation->GetNumberField("Y"), playerLocationRotation->GetNumberField("Z"));
+						
+
 						playerRotation = FRotator(playerLocationRotation->GetNumberField("pitch"), playerLocationRotation->GetNumberField("yaw"), playerLocationRotation->GetNumberField("roll"));
+						
 
 						objData.Reset();
 						objPlayers.Reset();
